@@ -23,7 +23,9 @@ Resources:
 
 [Stack_Overflow - Insert an element at a specific index in a list and return the updated list](https://stackoverflow.com/questions/14895599/insert-an-element-at-a-specific-index-in-a-list-and-return-the-updated-list)
 
+## Pull Requests
 
+[Pull Request 1](https://github.com/NickDorkins/data-structures-and-algorithms/pull/1)
 
 
 
