@@ -21,8 +21,8 @@ def test_insert_new_node_added_to_head():
 
 def test_create_head_and_point_to_first_value():
     pointToHeadList = LinkedList()
-    pointToHeadList.insert("WON")
     pointToHeadList.insert("TOO")
+    pointToHeadList.insert("WON")
     expected = "WON"
     actual = pointToHeadList.head.nodeValue
     assert actual == expected
@@ -31,9 +31,9 @@ def test_create_head_and_point_to_first_value():
 
 def test_multi_value_insert():
     multiInputList = LinkedList()
-    multiInputList.insert("WON")
-    multiInputList.insert("TOO")
     multiInputList.insert("THR33")
+    multiInputList.insert("TOO")
+    multiInputList.insert("WON")
     actual = [multiInputList.head.nodeValue, multiInputList.head.nextNodeValue.nodeValue, multiInputList.head.nextNodeValue.nextNodeValue.nodeValue]
     expected = ["WON", "TOO", "THR33"]
     assert actual == expected
