@@ -25,6 +25,7 @@ def test_create_head_and_point_to_first_value():
     pointToHeadList.insert("TOO")
     expected = "WON"
     actual = pointToHeadList.head.nodeValue
+    assert actual == expected
 
 
 
@@ -35,6 +36,7 @@ def test_multi_value_insert():
     multiInputList.insert("THR33")
     actual = [multiInputList.head.nodeValue, multiInputList.head.nextNodeValue.nodeValue, multiInputList.head.nextNodeValue.nextNodeValue.nodeValue]
     expected = ["WON", "TOO", "THR33"]
+    assert actual == expected
 
 
 def test_true_boolean_return_for_existing_in_list():
