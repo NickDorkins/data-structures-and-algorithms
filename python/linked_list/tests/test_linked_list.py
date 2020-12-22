@@ -19,13 +19,22 @@ def test_insert_new_node_added_to_head():
 
 
 
-# def test_create_head_and_point_to_first_value():
-    # pointToHeadList = LinkedList()
+def test_create_head_and_point_to_first_value():
+    pointToHeadList = LinkedList()
+    pointToHeadList.insert("WON")
+    pointToHeadList.insert("TOO")
+    expected = "WON"
+    actual = pointToHeadList.head.nodeValue
 
 
 
-# def test_multi_value_insert():
-    # multiInputList = LinkedList()
+def test_multi_value_insert():
+    multiInputList = LinkedList()
+    multiInputList.insert("WON")
+    multiInputList.insert("TOO")
+    multiInputList.insert("THR33")
+    actual = [multiInputList.head.nodeValue, multiInputList.head.nextNodeValue.nodeValue, multiInputList.head.nextNodeValue.nextNodeValue.nodeValue]
+    expected = ["WON", "TOO", "THR33"]
 
 
 def test_true_boolean_return_for_existing_in_list():
