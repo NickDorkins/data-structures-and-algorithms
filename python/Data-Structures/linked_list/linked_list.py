@@ -93,3 +93,26 @@ class LinkedList:
             else:
                 return "EXCEPTION"
 
+
+# Write a method for the Linked List class which takes a number, k, as a parameter. Return the node’s value that is k from the end of the linked list. You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
+
+# Create a separate list
+# Iterate throught the current list and append current to new list 
+# Find the negative kth index
+# Return the value of the index
+
+    def kthHelper(self):
+        emptyList = []
+        current = self.head
+        while current:
+            emptyList.append(current.nodeValue)
+            current = current.nextNodeValue
+        return emptyList
+
+    def kthFromEnd(self, k):
+        helper = self.kthHelper()
+        length = (len(helper)-1)-k
+        if k < len(helper) and k >= 0:
+            return helper[length]
+        else:
+            return "EXCEPTION"    
