@@ -42,3 +42,4 @@ Write tests to prove the following functionality:
 ### Zip List
 
 ![Zip List White Board](../../assets/images/Zip_List_WhiteBoard.png)
+[ll-zip pull Request](https://github.com/NickDorkins/data-structures-and-algorithms/pull/7)
