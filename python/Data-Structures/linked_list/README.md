@@ -33,8 +33,12 @@ Write tests to prove the following functionality:
 6. Will return false when searching for a value in the linked list that does not exist
 7. Can properly return a collection of all the values that exist in the linked list
 
-## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+## White Board
 
-## API
-<!-- Description of each method publicly available to your Linked List -->
+### Insertions 
+
+![Insertion White Board](../../assets/images/ll_insertions_white_board.png)
+
+### Zip List
+
+![Zip List White Board](../../assets/images/Zip_List_WhiteBoard.png)
