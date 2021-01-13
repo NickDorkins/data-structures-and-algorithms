@@ -136,3 +136,61 @@ def test_insert_to_end_value():
     actual = [insertToEnd.head.nodeValue, insertToEnd.head.nextNodeValue.nodeValue, insertToEnd.head.nextNodeValue.nextNodeValue.nodeValue, insertToEnd.head.nextNodeValue.nextNodeValue.nextNodeValue.nodeValue]
     expected = ["WON", "TOO", "THR33", "FORE"]
     assert actual == expected
+
+# Where k is greater than the length of the linked list
+
+def test_greater_than_list_length():
+    happy_pants = LinkedList()
+    happy_pants.insert(2)
+    happy_pants.insert(8)
+    happy_pants.insert(3)
+    happy_pants.insert(1)
+    actual = happy_pants.kthFromEnd(10)
+    expected = "EXCEPTION"
+    assert actual == expected
+
+# Where k and the length of the list are the same
+
+def test_k_equals_list_length():
+    happy_pants = LinkedList()
+    happy_pants.insert(2)
+    happy_pants.insert(8)
+    happy_pants.insert(3)
+    happy_pants.insert(1)
+    actual = happy_pants.kthFromEnd(4)
+    expected = "EXCEPTION"
+    assert actual == expected
+
+# Where k is not a positive integer
+
+def test_k_is_a_negative_number():
+    happy_pants = LinkedList()
+    happy_pants.insert(2)
+    happy_pants.insert(8)
+    happy_pants.insert(3)
+    happy_pants.insert(1)
+    actual = happy_pants.kthFromEnd(-2)
+    expected = "EXCEPTION"
+    assert actual == expected
+
+# Where the linked list is of a size 1
+
+def test_list_length_equals_1():
+    happy_pants = LinkedList()
+    happy_pants.insert(2)
+    actual = happy_pants.kthFromEnd(0)
+    expected = "2"
+    assert actual == expected
+    
+
+# “Happy Path” where k is not at the end, but somewhere in the middle of the linked list
+
+def test_happy_pants_kth_value():
+    happy_pants = LinkedList()
+    happy_pants.insert(2)
+    happy_pants.insert(8)
+    happy_pants.insert(3)
+    happy_pants.insert(1)
+    actual = happy_pants.kthFromEnd(2)
+    expected = "3"
+    assert actual == expected
