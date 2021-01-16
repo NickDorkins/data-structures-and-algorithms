@@ -1,5 +1,5 @@
 import pytest
-from stacks_and_queues.stacks_and_queues import Queue #, InvalidOperationError
+from stacks_and_queues.stacks_and_queues import Queue, InvalidOperationError
 
 
 def test_enqueue():
@@ -25,8 +25,10 @@ def test_peek():
 
 
 def test_peek_when_empty():
-    # TODO it should raise an exception when peeking an empty queue
-    pass
+    q = Queue()
+    actual = q.peek()
+    expected = "Method not allowed on empty collection"
+    assert actual == expected
 
 
 def test_enqueue_one():
