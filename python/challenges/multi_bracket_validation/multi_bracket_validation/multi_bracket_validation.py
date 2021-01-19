@@ -1,23 +1,29 @@
 
-def multi_bracket_validation(input: str) -> bool:
-    char_list = input
+def multi_bracket_validation(input):
+    char_list = list(input)
     if len(char_list) == 0:
         return False
     
     mutable_list = []
     brackets = "()[]{}"
+    iterator = []
 
     for character in char_list:
-        if character in brackets:
+        # print(character)
+        if character in list(brackets):
             mutable_list.append(character)
+            iterator.append(character)
+            print(mutable_list)
+
         else:
-            # char_list.remove(character)
+    #         char_list.remove(character)
             continue
         
         if len(mutable_list) == 0:
             return False
 
-        iterator = mutable_list
+       
+
         print(f"ITERATOR {iterator}")
 
         for bracket in iterator:
@@ -25,21 +31,29 @@ def multi_bracket_validation(input: str) -> bool:
             if bracket == '(':
                 for comp in mutable_list:
                     if comp == ')':
-                        mutable_list.remove(bracket, comp)
-                    else:
-                        return False
-            if bracket == '[':
+                        mutable_list.remove(comp)
+                        mutable_list.remove(bracket)
+                        print(mutable_list)
+                    # else:
+                        # return False
+            elif bracket == '[':
                 for comp in mutable_list:
                     if comp == ']':
-                        mutable_list.remove(bracket, comp)
-                    else:
-                        return False
-            if bracket == '{':
+                        mutable_list.remove(comp)
+                        mutable_list.remove(bracket)
+                    # else:
+                        # return False
+            elif bracket == '{':
                 for comp in mutable_list:
                     if comp == '}':
-                        mutable_list.remove(bracket, comp)
-                    else:
-                        return False
+                        mutable_list.remove(comp)
+                        mutable_list.remove(bracket)
+                    # else:
+                        # return False
 
-    if mutable_list == '':
+    if mutable_list == []:
         return True
+    else:
+        return False
+
+multi_bracket_validation("hello()")
