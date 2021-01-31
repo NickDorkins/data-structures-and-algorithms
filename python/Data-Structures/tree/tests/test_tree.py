@@ -1,5 +1,7 @@
+
+# import pytest
 from tree import __version__
-from tree.tree import Node, BinarySearch, BinaryTree
+from tree.tree import Node, BinaryTree, BinarySearch
 
 def test_version():
     assert __version__ == '0.1.0'
@@ -13,43 +15,32 @@ def successfully_instantiate_an_empty_tree():
     assert actual == expected
 
 
-# # Can successfully instantiate a tree with a single root node
-# def instantiate_a_tree_with_a_single_root_node():
-#     a = Node("A")
-#     pass
+# Can successfully instantiate a tree with a single root node
+def instantiate_a_tree_with_a_single_root_node():
+    tree = BinaryTree("A")
+    tree.root = Node("A")
+    expected = "A"
+    actual = tree.root.value
+    assert actual == expected
 
 # # Can successfully add a left child and right child to a single root node
-# def successfully_instantiate_an_empty_tree():
-#     a = Node("A")
-#     b = Node("B")
-#     c = Node("C")
-#     d = Node("D")
-#     e = Node("E")
-#     f = Node("F")
+def add_a_left_child_and_right_child_to_a_single_root_node():
+    tree = BinaryTree("A")
+    tree.root = Node("A")
+    tree.root.left = Node("B")
+    tree.root.right = Node("C")
+    expected = "B" and "C"
+    actual = tree.root.left.value and tree.root.right.value
+    assert actual == expected
 
 # # Can successfully return a collection from a preorder traversal
-# def successfully_instantiate_an_empty_tree():
-#     a = Node("A")
-#     b = Node("B")
-#     c = Node("C")
-#     d = Node("D")
-#     e = Node("E")
-#     f = Node("F")
+# def return_a_collection_from_a_preorder_traversal():
+#     
 
 # # Can successfully return a collection from an inorder traversal
-# def successfully_instantiate_an_empty_tree():
-#     a = Node("A")
-#     b = Node("B")
-#     c = Node("C")
-#     d = Node("D")
-#     e = Node("E")
-#     f = Node("F")
+# def return_a_collection_from_an_inorder_traversal():
+#    
 
 # # Can successfully return a collection from a postorder traversal
-# def successfully_instantiate_an_empty_tree():
-#     a = Node("A")
-#     b = Node("B")
-#     c = Node("C")
-#     d = Node("D")
-#     e = Node("E")
-#     f = Node("F")
+# def return_a_collection_from_a_postorder_traversal():
+#     

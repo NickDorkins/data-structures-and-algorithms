@@ -6,9 +6,10 @@ authors = ["NickDorkins <nick.dorkins@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
+pytest = "^6.2.2"
 
 [tool.poetry.dev-dependencies]
-pytest = "^6.2.2"
+pytest = "^6.0"
 black = {version = "^20.8b1", allow-prereleases = true}
 
 [build-system]

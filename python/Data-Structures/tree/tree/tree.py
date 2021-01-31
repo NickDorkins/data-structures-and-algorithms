@@ -1,5 +1,5 @@
 class Node:
-    def __inti__(self, values = None, left = None, right = None):
+    def __inti__(self, value = None, left = None, right = None):
         self.value = value
         self.left = left
         self.right = right
@@ -9,7 +9,11 @@ class BinaryTree:
     def __init__(self, root = None):
         self.root = root
 
+#  Write custom ERROR's for any that are raised
+
     def preOrder(self):
+        if self.root is None:
+            return "Your Root is empty, please preLoad a root value."
         def traverse(root):
             if not root:
                 return
@@ -19,6 +23,8 @@ class BinaryTree:
         traverse(self.root)
 
     def inOrder(self):
+        if self.root is None:
+            return "Your Root is empty,inOrder to proceed, please add a root value."
         def traverse(root):
             if not root:
                 return
@@ -27,6 +33,8 @@ class BinaryTree:
             traverse(root.right)
 
     def postOrder(self):
+        if self.root is None:
+            return "Your Root is empty, please add a root value."
         def traverse(root):
             if not root:
                 return
@@ -34,7 +42,6 @@ class BinaryTree:
             traverse(root.right)
             print(root.value)
 
-#  Write custom ERROR's for any that are raised
 
 class BinarySearch:
 
