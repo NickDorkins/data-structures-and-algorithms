@@ -16,7 +16,7 @@ def test_bracket_validation1():
     expected = True
     assert actual == expected 
 
-# def test_bracket_validation2():
-#     actual = val('(Code)')
-#     expected = True
-#     assert actual == expected 
+def test_bracket_validation2():
+    actual = val('(Code)')
+    expected = True
+    assert actual == expected 
