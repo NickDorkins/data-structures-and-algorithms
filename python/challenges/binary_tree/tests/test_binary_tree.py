@@ -11,5 +11,5 @@ def test_return_max_value_of_a_tree():
     tree.root.left = Node(2)
     tree.root.right = Node(3)
     expected = 3
-    actual = tree.max_value
+    actual = tree.find_maximum_value
     assert actual == expected

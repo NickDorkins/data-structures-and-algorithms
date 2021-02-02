@@ -53,6 +53,7 @@ class BinaryTree:
             max_value = 0
             if max_value == 0:
                 max_value = root.value
+                print(root.value)
             if max_value != 0:
                 if root.left < max_value:
                     traverse(root.left)
