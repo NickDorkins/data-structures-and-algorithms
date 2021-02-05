@@ -1,4 +1,4 @@
-from Binary_Tree.binary_tree import BinaryTree, Node
+from Breadth_First.breadth_first import BinaryTree, Node
 
 
 def test_breadth_traversal():
@@ -11,7 +11,5 @@ def test_breadth_traversal():
     tree.root.right.left = Node(6)
     tree.root.right.right = Node(7)
     expected = [1, 2, 3, 4, 5, 6, 7]
-    actual = tree.breadth_first_traversal
+    actual = tree.breadth_first_traversal()
     assert actual == expected 
-
-# print(test_breadth_traversal)
