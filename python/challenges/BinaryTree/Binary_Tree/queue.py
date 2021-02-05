@@ -18,8 +18,10 @@ class Queue:
         if self.is_empty() is True:
             self.rear = node
             return node
-        self.rear.next = node
-        return node
+        else:
+            self.rear.next = node
+            self.rear = self.rear.next
+            return node
 
     def dequeue(self):
         remove = self.front
