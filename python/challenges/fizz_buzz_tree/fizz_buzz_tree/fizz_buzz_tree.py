@@ -37,39 +37,44 @@ class BinaryTree:
                 # print('ROOT RIGHT VALUE INSIDE PREORDER:', root.right.value)
             # print('RETURNED LIST:' ,list_of_nodes_preorder)
         # print('ROOT VALUE INSIDE PREORDER END:', self.root)
-        return list_of_nodes_preorder
         traverse(self.root)
+        return list_of_nodes_preorder
+    
     
 
-def FizzBuzzTree(self):
+def FizzBuzzTree(tree):
+    print('FizzBuzz tree Value:', tree)
+    bin_tree = BinaryTree()
     
-    if self.root is None:
+    fizz_buzz_list = []
+    
+    if bin_tree.root is None:
         return "Your Root is empty, please add a root value. (FizzBuzz)" 
 
-        fizz_buzz_list = []
 
-        if left != None:
-            if left %15 == 0:
-                q.enqueue('FIZZBUZZ')
-            elif left %5 == 0:
-                q.enqueue('BUZZ')
-            elif left %3 == 0:
-                q.enqueue('FIZZ')
+        if bin_tree.root.value != None:
+            if bin_tree.root.value %15 == 0:
+                fizz_buzz_list.append('FIZZBUZZ')
+            elif bin_tree.root.value %5 == 0:
+                fizz_buzz_list.append('BUZZ')
+            elif bin_tree.root.value %3 == 0:
+                fizz_buzz_list.append('FIZZ')
             else:
-                q.enqueue(current.left.value)
+                fizz_buzz_list.append(bin_tree.root.value)
 
-        if current.right != None:
-            if right %15 == 0:
-                q.enqueue('FIZZBUZZ')
-            elif right %5 == 0:
-                q.enqueue('BUZZ')
-            elif right %3 == 0:
-                q.enqueue('FIZZ')
-            else:
-                q.enqueue(current.right.value)
-    
     return fizz_buzz_list
+    print('FIZZ_BUZZ_LIST', fizz_buzz_list)
 
+        # if right != None:
+        #     if right %15 == 0:
+        #         fizz_buzz_list.append('FIZZBUZZ')
+        #     elif right %5 == 0:
+        #         fizz_buzz_list.append('BUZZ')
+        #     elif right %3 == 0:
+        #         fizz_buzz_list.append('FIZZ')
+        #     else:
+        #         fizz_buzz_list.append(right.value)
+    
 
 
 if __name__ == "__main__":
@@ -91,4 +96,8 @@ if __name__ == "__main__":
     tree.root.right.left = fifteen
     tree.root.right.right = sixty
 
+    test_tree = tree.preOrder
     tree.preOrder()
+    print('PRINT PREORDER TEST', tree.preOrder())
+    FizzBuzzTree(test_tree)
+    print('PRINT FIZZ.BUZZ.TREE TEST', FizzBuzzTree(test_tree))
