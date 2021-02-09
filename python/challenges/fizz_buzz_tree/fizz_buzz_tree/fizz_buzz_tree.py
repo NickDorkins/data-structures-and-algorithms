@@ -41,6 +41,13 @@ class BinaryTree:
         return list_of_nodes_preorder
     
     
+    # NOTE TO SLLEPY NICK: DON'T TRY TO PASS A LIST IN AS A TREE!!! 
+
+    # LOOK AT THE NODE VALUE BEING PASSED IN AND ASSIGN IT TO ROOT, LEFT, OR RIGHT
+
+    # DON'T FORGET TO PASS THE VALUES INTO NODE()
+
+    
 
 def FizzBuzzTree(tree):
     bin_tree = BinaryTree()
@@ -48,27 +55,22 @@ def FizzBuzzTree(tree):
     return bin_tree
 
 def tree_translator(root):
-    fizz_buzz_list = []
+    fizz_buzz_node = None
 
     if root is None:
         return "Your Root is empty, please add a root value. (FizzBuzz)" 
 
-
-    if root.value != None:
+    if root != None:
         if root.value %15 == 0:
-            root.value = 'FIZZBUZZ'
-            fizz_buzz_list.append(root.value)
+            fizz_buzz_node = Node('FIZZBUZZ')
         elif root.value %5 == 0:
-            root.value = 'BUZZ'
-            fizz_buzz_list.append(root.value)
+            fizz_buzz_node = Node('BUZZ')
         elif root.value %3 == 0:
-            root.value = 'FIZZ'
-            fizz_buzz_list.append(root.value)
+            rfizz_buzz_node = Node('FIZZ')
         else:
-            fizz_buzz_list.append(root.value)
-
-    return fizz_buzz_list
-    print('FIZZ_BUZZ_LIST', fizz_buzz_list)
+            fizz_buzz_node = Node(root.value)
+    return fizz_buzz_node
+    print('FIZZ_BUZZ_NODE', fizz_buzz_node)
 
         # if right != None:
         #     if right %15 == 0:
@@ -101,8 +103,27 @@ if __name__ == "__main__":
     tree.root.right.left = fifteen
     tree.root.right.right = sixty
 
-    test_tree = tree.preOrder()
+    tree = FizzBuzzTree(one)
+    tree.root.left = three
+    tree.root.right = five
+    tree.root.left.left = eight
+    tree.root.left.right = ten
+    tree.root.right.left = fifteen
+    tree.root.right.right = sixty
+
+    tree = tree_translator(one)
+    tree.root.left = three
+    tree.root.right = five
+    tree.root.left.left = eight
+    tree.root.left.right = ten
+    tree.root.right.left = fifteen
+    tree.root.right.right = sixty
+
     tree.preOrder()
     print('PRINT PREORDER TEST', tree.preOrder())
-    FizzBuzzTree(test_tree)
-    print('FIZZ.BUZZ.TREE TEST', FizzBuzzTree(tree))
+
+    FizzBuzzTree()
+    print('FIZZ.BUZZ.TREE TEST', FizzBuzzTree())
+
+    tree_translator()
+    print('FIZZ.BUZZ.TREE TEST', tree_translator())
