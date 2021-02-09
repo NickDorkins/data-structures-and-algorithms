@@ -73,16 +73,31 @@ class BinaryTree:
 
         while len(q) > 0:
             current = q.dequeue()
+            left = current.left
+            right = current.right
+
             if current is None:
                 return fizz_buzz_list
             fizz_buzz_list.append(current.value)
 
-            if current.left != None:
-                q.enqueue(current.left.value)
+            if left != None:
+                if left %15 == 0:
+                    q.enqueue('FIZZBUZZ')
+                elif left %5 == 0:
+                    q.enqueue('BUZZ')
+                elif left %3 == 0:
+                    q.enqueue('FIZZ')
+                else:
+                    q.enqueue(current.left.value)
 
             if current.right != None:
-                q.enqueue(current.right.value)
+                if right %15 == 0:
+                    q.enqueue('FIZZBUZZ')
+                elif right %5 == 0:
+                    q.enqueue('BUZZ')
+                elif right %3 == 0:
+                    q.enqueue('FIZZ')
+                else:
+                    q.enqueue(current.right.value)
         
         return fizz_buzz_list
-
-        pass
