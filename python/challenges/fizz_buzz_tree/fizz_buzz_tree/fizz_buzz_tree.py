@@ -43,24 +43,29 @@ class BinaryTree:
     
 
 def FizzBuzzTree(tree):
-    print('FizzBuzz tree Value:', tree)
     bin_tree = BinaryTree()
-    
+    bin_tree.root = tree_translator(tree.root)
+    return bin_tree
+
+def tree_translator(root):
     fizz_buzz_list = []
-    
-    if bin_tree.root is None:
+
+    if root is None:
         return "Your Root is empty, please add a root value. (FizzBuzz)" 
 
 
-        if bin_tree.root.value != None:
-            if bin_tree.root.value %15 == 0:
-                fizz_buzz_list.append('FIZZBUZZ')
-            elif bin_tree.root.value %5 == 0:
-                fizz_buzz_list.append('BUZZ')
-            elif bin_tree.root.value %3 == 0:
-                fizz_buzz_list.append('FIZZ')
-            else:
-                fizz_buzz_list.append(bin_tree.root.value)
+    if root.value != None:
+        if root.value %15 == 0:
+            root.value = 'FIZZBUZZ'
+            fizz_buzz_list.append(root.value)
+        elif root.value %5 == 0:
+            root.value = 'BUZZ'
+            fizz_buzz_list.append(root.value)
+        elif root.value %3 == 0:
+            root.value = 'FIZZ'
+            fizz_buzz_list.append(root.value)
+        else:
+            fizz_buzz_list.append(root.value)
 
     return fizz_buzz_list
     print('FIZZ_BUZZ_LIST', fizz_buzz_list)
@@ -96,8 +101,8 @@ if __name__ == "__main__":
     tree.root.right.left = fifteen
     tree.root.right.right = sixty
 
-    test_tree = tree.preOrder
+    test_tree = tree.preOrder()
     tree.preOrder()
     print('PRINT PREORDER TEST', tree.preOrder())
     FizzBuzzTree(test_tree)
-    print('PRINT FIZZ.BUZZ.TREE TEST', FizzBuzzTree(test_tree))
+    print('FIZZ.BUZZ.TREE TEST', FizzBuzzTree(tree))
