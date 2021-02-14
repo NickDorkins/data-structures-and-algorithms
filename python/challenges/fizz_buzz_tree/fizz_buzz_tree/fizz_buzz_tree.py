@@ -47,30 +47,75 @@ class BinaryTree:
 
     # DON'T FORGET TO PASS THE VALUES INTO NODE()
 
+
+# def FizzBuzzTree(tree):
+#     bin_tree = BinaryTree()
+#     root = bin_tree.root
+#     # This statement should change a value to "FIZZBUZZ" if it is a Modulo of both 3 and 5
+#     if root.value %15 == 0:
+
+#        pass
     
+#     # This statement should change a value to "BUZZ" if it is a Modulo of 5
+#     if root.value %5 == 0:
+#         pass
 
-def FizzBuzzTree(tree):
-    bin_tree = BinaryTree()
-    bin_tree.root = tree_translator(tree.root)
-    return bin_tree
+#     # This statement should change a value to "FIZZ" if it is a Modulo of 3
+#     if root.value %3 == 0:
+#         pass
+    
+#     pass
 
-def tree_translator(root):
-    fizz_buzz_node = None
 
-    if root is None:
-        return "Your Root is empty, please add a root value. (FizzBuzz)" 
+def fizzBuzzTree(tree):
+    newTree = BinaryTree()
+    newTree.root = fizz_buzz_helper(tree.root)
+    return newTree
 
-    if root != None:
-        if root.value %15 == 0:
-            fizz_buzz_node = Node('FIZZBUZZ')
-        elif root.value %5 == 0:
-            fizz_buzz_node = Node('BUZZ')
-        elif root.value %3 == 0:
-            rfizz_buzz_node = Node('FIZZ')
-        else:
-            fizz_buzz_node = Node(root.value)
-    return fizz_buzz_node
-    print('FIZZ_BUZZ_NODE', fizz_buzz_node)
+def fizz_buzz_helper(root):
+    newNode = None
+    if root is None: 
+        return "Root is empty"    
+    if root.nodeVal % 15 == 0:
+        newNode = Node('FizzBuzz')
+    elif root.nodeVal % 3 == 0:
+        newNode = Node('Fizz')            
+    elif root.nodeVal % 5 == 0:
+        newNode = Node('Buzz')   
+    else: 
+        newNode = Node(root.nodeVal)
+    if root.left is not None:
+        newNode.left = fizz_buzz_helper(root.left)
+    if root.right is not None:
+        newNode.right = fizz_buzz_helper(root.right)
+    return newNode
+
+# def FizzBuzzTree(tree):
+#     bin_tree = BinaryTree()
+#     # bin_tree.root = tree_translator()
+#     return bin_tree
+
+#     def tree_translator(root):
+#         fizz_buzz_node = None
+
+#         if root is None:
+#             return "Your Root is empty, please add a root value. (FizzBuzz)" 
+
+#         if root != None:
+#             if root.value %15 == 0:
+#                 fizz_buzz_node = Node('FIZZBUZZ')
+#             elif root.value %5 == 0:
+#                 fizz_buzz_node = Node('BUZZ')
+#             elif root.value %3 == 0:
+#                 fizz_buzz_node = Node('FIZZ')
+#             else:
+#                 fizz_buzz_node = Node(root.value)
+#             if root.left is not None:
+#                 fizz_buzz_node.left =  root.left
+#             if root.right is not None:
+#                 fizz_buzz_node.right = root.right
+#         return fizz_buzz_node
+#         print('FIZZ_BUZZ_NODE', fizz_buzz_node)
 
         # if right != None:
         #     if right %15 == 0:
@@ -103,7 +148,7 @@ if __name__ == "__main__":
     tree.root.right.left = fifteen
     tree.root.right.right = sixty
 
-    tree = FizzBuzzTree(one)
+    tree = fizzBuzzTree(one)
     tree.root.left = three
     tree.root.right = five
     tree.root.left.left = eight
@@ -111,19 +156,19 @@ if __name__ == "__main__":
     tree.root.right.left = fifteen
     tree.root.right.right = sixty
 
-    tree = tree_translator(one)
-    tree.root.left = three
-    tree.root.right = five
-    tree.root.left.left = eight
-    tree.root.left.right = ten
-    tree.root.right.left = fifteen
-    tree.root.right.right = sixty
+    # tree = tree_translator(one)
+    # tree.root.left = three
+    # tree.root.right = five
+    # tree.root.left.left = eight
+    # tree.root.left.right = ten
+    # tree.root.right.left = fifteen
+    # tree.root.right.right = sixty
 
     tree.preOrder()
     print('PRINT PREORDER TEST', tree.preOrder())
 
-    FizzBuzzTree()
-    print('FIZZ.BUZZ.TREE TEST', FizzBuzzTree())
+    fizzBuzzTree()
+    print('FIZZ.BUZZ.TREE TEST', fizzBuzzTree(tree.preOrder))
 
-    tree_translator()
-    print('FIZZ.BUZZ.TREE TEST', tree_translator())
+    # tree_translator()
+    # print('FIZZ.BUZZ.TREE.TRANSLATOR TEST', tree_translator())

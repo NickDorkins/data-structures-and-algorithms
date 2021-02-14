@@ -18,6 +18,6 @@ from fizz_buzz_tree.fizz_buzz_tree import Node, BinaryTree, FizzBuzzTree
 
 #     fizz_buzz_tree = FizzBuzzTree(tree)
 #     actual = fizz_buzz_tree.preorder
-#     expected = [1, 'FIZZ', 'BUZZ', ]
+#     expected = [1, 'FIZZ', 8, 'BUZZ', 'BUZZ', 'FIZZBUZZ', FIZZBUZZ' ]
 #     assert actual == expected
 
