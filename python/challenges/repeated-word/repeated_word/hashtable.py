@@ -44,8 +44,7 @@ class Hashtable:
       
 
 
-
-
+      
 #  ------------------ Class HashTable Notes --------------
 
 # How many buckets do you want?
