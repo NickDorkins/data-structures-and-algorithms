@@ -51,10 +51,8 @@ class Graph:
 # Takes in a given node
 # Include the weight of the connection in the returned collection
 
-    def add_neighbor(self, value):
-        if value not in self._adjacency_list:
-            self._adjacency_list.append(value)
-        return self._adjacency_list
+    def get_neighbor(self, value):
+        return self._adjacency_list[value]
 
         
 
