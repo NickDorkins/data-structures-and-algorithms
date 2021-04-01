@@ -66,9 +66,21 @@ class Graph:
     def __len__(self):
         return len(self._adjacency_list)
 
+# Given a business trip itinerary, and an Alaska Airlines route map, is the trip possible with direct flights? If so, how much will the total trip cost be?
+#    
+# Write a function based on the specifications above, which takes in a graph, and an array of city names. Without utilizing any of the built-in methods available to your language, return whether the full trip is possible with direct flights, and how much it would cost.
+
+    def get_edges(self, city_list):
+        price = 0
+        flight = False
+
+        for i in range(len(city_list)-1):
+            city = list[i]
+            connection = self._adjacency_list[city]
 
 
-     
+
+     return flight,f'$(price)'
 
 
 class Vertex:
@@ -82,9 +94,6 @@ class Edge:
         self.vertex = vertex
         self.weight = weight
 
-# Given a business trip itinerary, and an Alaska Airlines route map, is the trip possible with direct flights? If so, how much will the total trip cost be?
-#    
-# Write a function based on the specifications above, which takes in a graph, and an array of city names. Without utilizing any of the built-in methods available to your language, return whether the full trip is possible with direct flights, and how much it would cost.
 
 
 
