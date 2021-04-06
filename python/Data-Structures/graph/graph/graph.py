@@ -83,6 +83,7 @@ class Graph:
         return flight,f'$(price)'
 
 
+
 class Vertex:
 
     def __init__(self, value):
