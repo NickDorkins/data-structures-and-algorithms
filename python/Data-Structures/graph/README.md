@@ -18,3 +18,7 @@ Utilize the Single-responsibility principle: any methods you write should be cle
 Write at least three test assertions for each method that you define.
 
 Ensure your tests are passing before you submit your solution.
+
+[Whiteboard - Depth First](https://docs.google.com/spreadsheets/d/1rE2lDnT0IjtXnAIbq_wWbGnf0oeHu9zA9GIrT6jYEac/edit?usp=sharing)
+
+[Pull Request](https://github.com/NickDorkins/data-structures-and-algorithms/pull/24)
