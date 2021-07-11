@@ -1,4 +1,4 @@
-
+from stacks_and_queues.stacks_and_queues.stacks_and_queues import Queue
 class Graph:
 
     def __init__(self):
@@ -32,8 +32,6 @@ class Graph:
         adjacencies = self._adjacency_list[start_vertex]
         adjacencies.append(edge)
 
-
-
 # GetNodes()
 # Returns all of the nodes in the graph as a collection (set, list, or similar)
 
@@ -54,17 +52,13 @@ class Graph:
     def get_neighbor(self, value):
         return self._adjacency_list[value]
 
-        
-
-     
-
-
 # Size()
 # Returns the total number of nodes in the graph
 
 
     def __len__(self):
         return len(self._adjacency_list)
+
 
 # Given a business trip itinerary, and an Alaska Airlines route map, is the trip possible with direct flights? If so, how much will the total trip cost be?
 #    
@@ -97,5 +91,23 @@ class Edge:
 
 
 
+def breadth_first_graph(self, value):
+
+    new_list = [value]
+    traversal_order = []
+    tracked_values = {}
+    current = None
+    neighbor  = None
+
+    tracked_values[value] = True
+
+    while new_list is not None:
+        current = new_list.pop(0)
+        neighbor = self.get_neighbor(current)
+        traversal_order.append(current)
+
+        
+
+    
 
 
